@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int ehBissexto(int ano);
+
+int main() {
+    int ano;
+
+    printf("Digite um ano: ");
+    scanf("%d", &ano);
+
+    if (ehBissexto(ano) == 1) {
+        printf("%d e um ano bissexto\n", ano);
+    } else {
+        printf("%d nao e um ano bissexto\n", ano);
+    }
+
+    return 0;
+}
+
+// bissexto: divisivel por 400, ou divisivel por 4 e nao por 100
+int ehBissexto(int ano) {
+    if (ano % 400 == 0) {
+        return 1;
+    }
+    if (ano % 4 == 0 && ano % 100 != 0) {
+        return 1;
+    }
+    return 0;
+}
